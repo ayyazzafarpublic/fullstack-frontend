@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment.development';
 interface AuthResponse{
   token:string
 }
@@ -9,7 +10,7 @@ interface AuthResponse{
 })
 export class AuthService {
 
-  apiUrl='http://localhost:3000/api';
+  apiUrl=`${environment.apiUrl}/api`;
   token: string|null = null;
 
   constructor(
